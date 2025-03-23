@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-outfit: var(--font-outfit);
+  --font-jetbrains-mono: var(--font-jetbrains-mono);
+}
+
+body {
+  font-family: var(--font-outfit);
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #151515;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2A;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #353535;
+}
+
+/* Selection */
+::selection {
+  background: rgba(253, 184, 19, 0.2);
+  color: #E0E0E0;
+}
+
+/* Chart Styles */
+.chart-container {
+  @apply w-full h-full bg-trading-bg;
+}
+
+.chart-grid {
+  stroke: theme('colors.trading.chart.grid');
+  stroke-width: 1;
+}
+
+.chart-line {
+  stroke: theme('colors.trading.chart.line');
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.chart-volume {
+  fill: theme('colors.trading.chart.volume');
+  opacity: 0.3;
+}
+
+/* Trading Components */
+.trading-input {
+  @apply bg-trading-bg border border-trading-border rounded px-3 py-1.5 text-sm focus:outline-none focus:border-trading-text-accent;
+}
+
+.trading-button {
+  @apply px-3 py-1.5 rounded text-sm transition-colors;
+}
+
+.trading-button-primary {
+  @apply bg-trading-text-accent text-trading-bg hover:bg-opacity-90;
+}
+
+.trading-button-secondary {
+  @apply bg-trading-hover text-trading-text-primary hover:bg-trading-active;
+}
+
+/* Price Display */
+.price-display {
+  @apply font-mono text-sm tabular-nums;
+}
+
+.price-up {
+  @apply text-trading-text-positive;
+}
+
+.price-down {
+  @apply text-trading-text-negative;
+}
+
+/* Market Depth */
+.depth-chart {
+  height: 200px;
+  @apply bg-trading-bg rounded;
+}
+
+.depth-asks {
+  fill: theme('colors.trading.text.negative');
+  opacity: 0.1;
+}
+
+.depth-bids {
+  fill: theme('colors.trading.text.positive');
+  opacity: 0.1;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-status {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Focus Styles */
+*:focus {
+  @apply outline-none ring-1 ring-trading-text-accent ring-opacity-50;
+}
+
+/* Typography */
+.text-label {
+  @apply text-trading-text-secondary text-sm;
+}
+
+.text-value {
+  @apply text-trading-text-primary font-mono;
+}
+
+.text-small {
+  @apply text-xs text-trading-text-secondary;
+} 

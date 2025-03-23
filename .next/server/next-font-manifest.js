@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/dev/Desktop/Projects/RapidRisk/RapidRiskDevelopment/src/app/layout\":[\"static/media/bb3ef058b751a6ad-s.p.woff2\",\"static/media/07a54048a9278940-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
